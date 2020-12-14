@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        #con{
+            margin:0 auto;
+            width:800px;
+            height:1000px;    
+            
+        }
+        .tit{
+            background-color:rgb(21, 140, 187);
+            overflow:hidden;
+        }
+        .title{
+            color:rgb(33, 83, 190);
+            width:800px;
+            height:20px;      
+
+        }
+        #bground{
+            width:800px;
+            height:800px;
+        }
+      
+        #game{
+            margin:0 auto;
+            width:400px;
+            height:600px;
+            position:absolute;
+            margin-top:100px;
+            text-align:center;
+            margin-left:200px;
+        }
+        #date{
+            position:absolute;
+            margin-top:10px;
+            width:400px;
+            height:20px;
+
+        }
+      
+        table{
+            position:absolute;
+            margin-top:20px;
+        }
+        td{
+            width:150px;
+            height:150px;
+            text-align:center;
+            font-size:80px;
+            color:pink;
+            margin:0 auto;
+        }
+        #guess{
+            text-align:center;
+            width:150px;
+            margin-top:50px;
+            height:150px;
+            font-size:20px;
+            margin:0 auto;
+            color:pink;
+            font-weight:bold;
+            background-color:rgb(54, 108, 189);
+        }
+        #result{
+            height:30px;
+            position:absolute;
+            margin-bottom:10px;
+            color:rgb(90, 118, 245);
+            
+
+        }
+        .btn{
+            position:absolute;
+            width:500px;
+            height:30px;
+            margin-top:50px;
+        }
+        #btn1 {
+            float:left;
+            width:100px;
+            height:25px;
+            margin-left:10px;
+        }
+        #btn2 {
+            float:left;
+            width:100px;
+            height:25px;
+            margin-left:10px;
+        }
+        #btn3 {
+            float:left;
+            width:100px;
+            height:25px;
+            margin-left:10px;
+        }
+        #txt{
+            width:700px;
+            text-align:center;
+            height:400px;
+            position:absolute;
+            margin-top:100px;
+            margin-left:50px;
+            color:aquamarine;
+        }
+      
+
+    </style>
+</head>
+<body>
+
+    <div id = "con">
+        <div class="tit">
+           <div class = "title">
+                欢迎来到雪梨休闲站
+           </div>   
+        </div>
+        <div id = "bground">
+            <div id = "date">日期：</div>
+            <div class="btn">
+                <button id ="btn1">更换纯色背景</button>
+                <button id ="btn2">更换照片背景</button>
+                <button id ="btn3">抽奖小游戏</button>
+            </div>
+            <div id = "txt"> 
+                <h1>宇宙起源</h1>
+                现代宇宙学中的主流观点认为宇宙的起源，是起源于一次大爆炸，是在过去由一个密度极大且温度极高的状态演变而来的，
+                并经过不断的膨胀达到的状态，这种观点被称为宇宙大爆炸理论或奇点大爆炸理论。我们不知道什么原因引起了这次大爆炸。
+                大爆炸发出的光线，还在向外传播。爆炸产生的气体和云团，舞动着，旋转着，聚集成胚胎时期的星系。
+                <h2>星空唯美句子</h2>
+                <p>1.安静笼罩著夏夜巨大的星空,覆盖著整个地球,温柔地无声无息</p>
+                <p>2.星星就像一盏盏小电灯,在空中闪烁</p>
+                <p>3.我对着广阔无垠的浩瀚星海,对着满天的银光,静静地坐着,心里就有了一片完整的星空。</p>
+                <p>4.如是一弯弦月升起，随着弦月的迅速移动，星星们像有光能蓄电池一样，不断充电逐渐变得更亮。</p>
+                <p>5.透过时光的空隙，银河有迹可循</p>
+                <p>6.一直相信着 在世界的某个角落 会有专属于我的小小宇宙</p>
+                <h3>关于星空的诗句</h3>
+                <P>1.星依云渚溅溅，露零玉液涓涓，宝砌哀兰剪剪。碧天如练，光摇北斗阑干。</P>
+                <p>2.东郊向晓星杓亚。报帝里，春来也。</p>
+                <p>3.夜色催更，清尘收露，小曲幽坊月暗。</p>
+
+            </div>
+            <div id = "game">
+                <table border="1" cellspacing=0>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td><button id="guess">点击抽奖</button></td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>7</td>
+                    </tr>
+                </table>
+                <div id="result"></div>
+            </div> 
+        </div>   
+    </div>    
+</body>
+<script>
+    var result = document.getElementById("result");
+    var guess = document.getElementById("guess");
+    var date = document.getElementById("date");
+    var game = document.getElementById("game");
+    var title = document.getElementsByClassName("title");
+    var btn1 = document.getElementById("btn1");
+    var btn2 = document.getElementById("btn2");
+    var bground = document.getElementById("bground");
+    var txt = document.getElementById("txt"); 
+    //动态广告
+    title[0].style.marginLeft = "0";
+    var intervalId = setInterval(function(){
+        var left = parseInt(title[0].style.marginLeft);
+        title[0].style.marginLeft = (left + 1)+"px";
+        if(left >= 800){
+            title[0].style.marginLeft = "0";
+        }
+    },10);
+    //随机更换纯色背景
+    document.body.style.backgroundColor = "rgb(11, 22, 71)";
+    function createColor(){
+        var arr = [0,1,2,3,4,5,6,7,8,9,"a","b","c","d","e","f"];
+        var bgColor = "";
+        for(var i = 0;i < 6;i++){
+            var index = parseInt(Math.random()*arr.length);
+            bgColor += arr[index];
+        }
+        return bgColor;
+    }
+    btn1.onclick = function() {
+        document.body.style.backgroundColor = "#" + createColor();
+    }
+
+    //随机更换照片背景
+    
+    var count = 0;
+    var bgPic;
+    bground.style.background = "url(picture/a1.jpg)";
+    btn2.onclick = function(){
+        count++;
+        console.log(count);
+        if(count % 2 != 0){
+            bgPic = setInterval(function(){
+            var imgs = ["picture/a1.jpg","picture/a2.jpg","picture/a3.jpg","picture/a4.jpg","picture/a5.jpg","picture/a6.jpg","picture/a7.jpg","picture/a8.jpg"];
+            var num = Math.floor(Math.random()*imgs.length);
+            bground.style.background="url("+imgs[num]+")";
+            },100)
+        }else if(count %2 == 0){
+            clearInterval(bgPic);
+        }
+    }
+
+
+    //日期显示
+    var date0 = new Date();
+    var year = date0.getFullYear();
+    var month0 = date0.getMonth();
+    var month = month0 + 1;
+    var date1 = date0.getDate();
+    var day = date0.getDay();
+    var weeks = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+    var str = ("日期：" + year + " - " + month + " - " + date1 +  " "  + weeks[day]);
+    date.style.color = "pink";
+    //时间显示
+    var a = setInterval(function(){
+        function convertTimer(start) {
+            return start < 10 ? ("0" + start) : start;
+        }
+        var date1 = new Date();
+        var hour  = date1.getHours();
+        var min = date1.getMinutes();
+        var second = date1.getSeconds();
+        hour = convertTimer(hour);
+        min = convertTimer(min);
+        second = convertTimer(second);
+        var timer = hour + ":" + min + ":" + second;
+        date.innerHTML = str + "  " + timer;
+    },1000);
+    //抽奖
+    var index = 0;
+    var tdList = document.getElementsByTagName("td");
+    var state = 0;
+    var timeGuess ;
+    var num;
+    var countNum=1;
+    game.style.display="none";
+    btn3.onclick=function(){
+        countNum++;
+        index = 0;
+        if(countNum%2!=0){
+            game.style.display = "none";
+            txt.style.display = "block";
+            
+        }else{
+            game.style.display = "block";
+            txt.style.display = "none";
+            result.innerHTML =  "";
+            clearInterval(timeGuess);
+        }
+    }
+    guess.onclick =function(){
+        if (state == 0) {
+            clearInterval(timeGuess);
+            timeGuess = setInterval(function() {
+                for (var i = 0; i < tdList.length; i++) {
+                    tdList[i].style.backgroundColor = "blanchedalmond";
+                }
+                tdList[index].style.backgroundColor = "white";
+                if (index < 2)
+                    index += 1;
+                else if (index == 2)
+                    index = 5;
+                else if (index == 5)
+                    index = 8;
+                else if (index > 6)
+                    index = index - 1;
+                else if (index == 6)
+                    index = 3;
+                else if (index == 3)
+                    index = 0;
+            }, 50)
+            state = 1;
+        }else{
+            state = 0;
+            console.log(index);
+            result.innerHTML = ("恭喜你抽中" + index + "号奖品");  
+            clearInterval(timeGuess);
+        }
+    }
+
+</script>
+</html>
